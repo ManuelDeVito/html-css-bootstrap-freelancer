@@ -156,19 +156,52 @@ section.boy {
     vertical-align: middle;
 }
 
-.col-xs-12.col-sm-6.col-md-6.col-lg-4 {
-    margin: 0;
-    padding: 0;
-}
+
 
 .giochi {
-    margin: 0 0 48px;
-    padding: 0 24px;
+    position: relative;
+
 }
 
 img.img-fluid {
     border-radius: 10px;
+    width: 100%;
+    margin-bottom: 48px;
+
 }
+
+.giochi::before {
+    content: "";
+    background-color: rgba(26, 188, 156, 0.9);
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+    transition: all 0.5s;
+}
+
+.giochi:hover::before, .giochi:hover::after {
+    opacity: 1;
+}
+
+.giochi::after {
+    content: "\f067";
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 72px;
+    color: white;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+
 
 #about.about-freelancer {
     background-color: #1abc9c;
@@ -188,22 +221,25 @@ img.img-fluid {
     color: white;
 }
 
-.fa-download{
-    max-width: 20px;
-    color: white;
-    margin-right: 10px;
+.fa-download {
+    margin-right: 8px;
 }
 
-.button-free {
-    margin-top: 50px;
-}
 
 .button-download {
-    padding: 15px 25px;
+    background-color: #1abc9c;
+    padding: 16px 28px;
     color: white;
     border: 1px solid white;
     border-radius: 10px;
     font-size: 20px;
+    margin-top: 50px;
+}
+
+button.button-download:hover {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    color: #212529;
 }
 
 #contact.personal-informations {
@@ -231,24 +267,42 @@ img.img-fluid {
     vertical-align: middle;
 }
 
-.control-group {
-    padding: 50px 0;
-}
 
 .form-control {
     padding: 50px 20px;
     color: #495057;
     font-size: 25px;
+    border: 0;
+    box-shadow: none;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0;
+}
+
+textarea.text-area-dimension {
+    border-color: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    resize: none;
+    z-index: 1;
+
 }
 
 #send .form-group .button-send {
     background-color: #1abc9c;
-    border-color: #1abc9c;
+    border: none;
     padding: 16px 28px;
     border-radius: 10px;
     color: white;
     font-size: 20px;
     float: left;
+    box-shadow: none;
+
+}
+#send .form-group .button-send:hover {
+    color: white;
+    background-color: #159a80;
+    border-color: #148f77;
 }
 
 /* --------Fine Section-------  */
@@ -260,13 +314,16 @@ img.img-fluid {
     color: white;
     padding: 50px 0;
 }
+.social {
+    padding: 0;
+
+}
 
 .social .lista-social {
     display: inline-block;
     font-size: 30px;
     color: white;
-    padding: 0 10px;
-    margin-right: 10px;
+
 }
 
 .title-footer {
@@ -276,20 +333,27 @@ img.img-fluid {
     margin-top: 0;
 }
 
-.fab.fa-facebook {
-    color: white;
+.bnt-social {
+    height: 52px;
+    width: 52px;
+    border: 3px solid white;
+    display: inline-block;
+    border-radius: 100%;
+    margin: 0 5px;
 }
 
-.fab.fa-twitter {
-    color: white;
+.lista-social .bnt-social:hover {
+    background-color: white;
 }
 
-.fab.fa-linkedin-in {
+.fab.fa-facebook-f, .fab.fa-twitter, .fab.fa-linkedin-in, .fab.fa-dribbble{
     color: white;
+    padding: 10px;
+    font-size: 23px;
 }
 
-.fab.fa-dribbble {
-    color: white;
+.fab.fa-facebook-f:hover, .fab.fa-twitter:hover, .fab.fa-linkedin-in:hover, .fab.fa-dribbble:hover {
+    color: #2c3e50;
 }
 
 .dimension {
